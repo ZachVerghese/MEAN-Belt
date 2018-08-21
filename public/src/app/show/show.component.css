@@ -1,0 +1,61 @@
+div, p{
+    display:inline-block;
+}
+
+#type, #description, #likes, #buttons{
+    display:block;
+}
+
+div{
+    font-weight: bolder;
+}
+p, li{
+    font-weight:normal;
+}
+
+h6, a{
+    display:inline-block;
+}
+a{
+    margin-left:50%;
+}
+#top, #main{
+    display:block;
+    margin-left:15px;
+}
+
+#main{
+    margin-left:25px;
+}
+#skills, #skill{
+    display:block;
+}
+
+#skills{
+    margin-left:15px;
+}
+#errors{
+    color:red;
+    display:block;
+}
+#error{
+    display:block;
+}
+
+btn{
+    text-align:center;
+    padding:0;
+    align-content: center;
+    margin-right:40px;
+}
+a{
+    margin:0px;
+}
+
+h6{
+    margin-left:50px;
+}
+
+#home{
+    margin-left:50px;
+}

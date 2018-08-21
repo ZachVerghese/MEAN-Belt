@@ -1,0 +1,34 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <h4>Write a review for {{therestaurant[0].name}} </h4>
+  <div id="main">
+
+    <div>
+      <ul>
+        <li *ngIf="newRev.name.length <= 2">Your name must be greater than 2 characters</li>
+        <li *ngIf="newRev.stars.length == 0">Must rate restaurant </li>
+        <li *ngIf="newRev.message.length <= 2">Review must be greater than 2 characters</li>
+      </ul>
+    </div>
+
+    <div id="input">
+      <p>Your name:</p>
+      <input type="text" name="name" [(ngModel)]="newRev.name">
+      <p>Stars: </p>
+      <select id="select" [(ngModel)] = "newRev.stars" name="stars">
+          <option value=5 > 5 stars</option>
+          <option value=4 > 4 stars</option>
+          <option value=3 > 3 stars</option>
+          <option value=2 > 2 stars</option>
+          <option value=1 > 1 star</option>
+        </select>
+      <p>Your Review:</p>
+      <input type="text" name="type" [(ngModel)]="newRev.message">
+    </div>
+    
+
+    <div id="buttons">
+      <button *ngIf="newRev.name.length > 2 && newRev.message.length > 2 && newRev.stars.length > 0" [routerLink] = "['/restaurants',therestaurant[0]._id]" (click) = "addReview(therestaurant[0]._id, newRev)"> Submit </button>
+      <button [routerLink] = "['/restaurants',therestaurant[0]._id]" >Cancel </button>
+    </div>
+  </div>

@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+
+<div id= "top">
+    <button class="btn btn-success"><a [routerLink]="['/restaurants',therestaurant[0]._id,'review']">New Review</a></button>
+    <h6>Reviews for {{therestaurant[0].name}}</h6>
+    <a id="home" [routerLink] = "['']" >Home</a>
+  </div>
+
+  <table class= "table table-striped">
+      <tr>
+        <th  >
+          Customer
+        </th>
+        <th >
+            Stars
+          </th>
+          <th >
+            Description
+          </th>
+      </tr>
+      <tr *ngFor="let review of thereviews">
+        <td>{{review.name}}</td>
+        <td>{{review.stars}}</td>
+        <td> 
+          {{review.message}}
+          <!-- <button><a [routerLink] = "['restaurants', restaurant._id]" (click) = "deleteErrors()">Read Reviews</a></button>
+          <button> <a [routerLink] = "['restaurants','edit', restaurant._id]" (click) = "deleteErrors()">Update</a></button>
+          <button>Delete </button>
+          <button><a [routerLink] = "['restaurants', restaurant._id]" (click) = "deleteErrors()">Details</a></button> -->
+        </td>
+      </tr>
+  </table>
+
+<!-- <div id="buttons">
+  <button (click) = "addLike(therestaurant[0]._id)"> Like this pet </button>
+  <button [routerLink]="['']" (click) = "deletePet(therestaurant[0]._id)">Adopt this Pet</button>
+</div> -->

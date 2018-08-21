@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<button class="btn btn-success" ><a [routerLink] = "['/restaurants','new']">New Restaurant</a></button>
+<div *ngIf = "errors">
+  <p class="errors">{{errors}}</p>
+</div>
+<div *ngIf= "errors2">
+  <p class="errors" > {{errors2}}</p>
+</div>
+  <table class= "table table-striped">
+      <tr>
+        <th  >
+          Name
+        </th>
+        <th >
+            Cuisine
+          </th>
+          <th >
+            Actions Available
+          </th>
+      </tr>
+      <tr *ngFor="let restaurant of allrestaurants">
+        <td>{{restaurant.name}}</td>
+        <td>{{restaurant.cuisine}}</td>
+        <td> 
+          <button class= 'btn btn-primary' ><a id="first" [routerLink] = "['/restaurants', restaurant._id]" (click) = "deleteErrors()">Read Reviews</a></button>
+          <button class= 'btn btn-warning'> <a [routerLink] = "['edit', restaurant._id]" (click) = "deleteErrors()">Update</a></button>
+          <button *ngIf = "info.signal == true && info.name == restaurant.name " class= 'btn btn-danger' (click) = "deleteRestaurant(restaurant._id)" >Delete </button>
+          <!-- <button><a [routerLink] = "['restaurants', restaurant._id]" (click) = "deleteErrors()">Details</a></button> -->
+        </td>
+      </tr>
+  </table>
+  <router-outlet></router-outlet>

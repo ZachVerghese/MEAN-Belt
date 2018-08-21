@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <h4>Register a Restaurant</h4>
+  <div id="main">
+
+    <!-- <div>
+      <ul>
+      </ul>
+    </div> -->
+
+    <div id="input">
+      <p>Restaurant name:</p>
+      <input type="text" name="name" [(ngModel)]="newRest.name">
+      <li *ngIf="newRest.name.length <= 2">Restaurant name must be greater than 2 characters</li>
+
+      <p>Cuisine:</p>
+      <input type="text" name="type" [(ngModel)]="newRest.cuisine">
+      <li *ngIf="newRest.cuisine.length <= 2">Cuisine must be greater than 2 characters</li>
+
+    </div>
+    
+
+    <div id="buttons">
+      <button *ngIf="newRest.name.length > 2 && newRest.cuisine.length > 2 " [routerLink] = "['']" (click) = "createRestaurant()"> Register </button>
+      <button [routerLink] = "['']">Cancel </button>
+    </div>
+  </div>
