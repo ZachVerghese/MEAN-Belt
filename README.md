@@ -18,5 +18,5 @@ Single Page Web Application created using MongoDB, Express, Angular, and Node
 - Nested Edit Component that appears at bottom of home page when attempting to update restaurant
 - Deployed on AWS
 Link: http://18.191.241.240/
-(Functions most efficiently by downloading and viewing on localhost)
+(UPDATE: Deployment Instance Terminated due to Excessive Data Usage)
 
