@@ -20,3 +20,5 @@ Single Page Web Application created using MongoDB, Express, Angular, and Node
 Link: http://18.191.241.240/
 (UPDATE: Deployment Instance Terminated due to Excessive Data Usage)
 
+Earned Black Belt
+
